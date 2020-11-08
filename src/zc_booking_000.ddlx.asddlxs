@@ -1,0 +1,65 @@
+@Metadata.layer: #CORE
+
+@UI:
+{
+ headerInfo:
+  {
+    typeName: 'Booking',
+    typeNamePlural: 'Bookings',
+    title: { type: #STANDARD, value: 'Booking' }
+  }
+ }
+annotate view ZC_BOOKING_000 with
+{
+  @UI.facet: [
+      {
+        id:       'Booking',
+        purpose:  #STANDARD,
+        type:     #IDENTIFICATION_REFERENCE,
+        label:    'Booking',
+        position: 10 }
+    ]
+
+
+  @UI: {
+      lineItem: [ { position: 10, importance: #HIGH, label: 'Booking ID' } ],
+      identification:[ { position: 10, label: 'Booking ID' } ]
+      }
+  Booking;
+  @UI: {
+      lineItem: [ { position: 20, label: 'Customer', importance: #HIGH } ],
+      identification:[ { position: 10, label: 'Customer' } ]
+    }
+  @Search.defaultSearchElement: true
+  CustomerName;
+  @UI: {
+    lineItem: [ { position: 30, label: 'No of Passengers', importance: #HIGH } ],
+    identification:[ { position: 30, label: 'No of Passengers' } ]
+    }
+  NumberOfPassengers;
+  @UI: {
+         identification:[ { position: 40, label: 'Email' } ]
+     }
+  EmailAddress;
+  @UI: {
+         identification:[ { position: 50, label: 'Country' } ]
+     }
+  country;
+  @UI: {
+         identification:[ { position: 60, label: 'Booked On' } ]
+     }
+  DateOfBooking;
+  @UI: {   identification:[ { position: 70, label: 'Traveling on' } ]    }
+  DateOfTravel;
+  @UI: {
+    lineItem: [ { position: 40, label: 'Cost', importance: #HIGH } ],
+    identification:[ { position: 80, label: 'Cost' } ]
+    }
+
+  cost;
+  @UI: { identification:[ { position: 90, label: 'Currency' } ]     }
+  CurrencyCode;
+  @UI: { identification:[ { position: 100, label: 'Last Changed At' } ] }
+  LastChangedAt;
+
+}
