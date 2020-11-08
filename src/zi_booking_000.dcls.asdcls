@@ -1,0 +1,11 @@
+@EndUserText.label: 'Accesss control for ZI_BOOKING_000'
+@MappingRole: true
+define role ZI_BOOKING_000 {
+    grant
+        select
+            on
+                ZI_Booking_000
+                    where
+//                        CurrencyCode = 'BRL';
+                    true; // Work-around                   
+}

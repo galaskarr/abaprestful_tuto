@@ -1,0 +1,10 @@
+@EndUserText.label: 'Accesss control for ZC_BOOKING_000'
+@MappingRole: true
+define role ZC_BOOKING_000 {
+    grant
+        select
+            on
+                ZC_BOOKING_000
+                    where
+                        inheriting conditions from entity ZI_Booking_000;                        
+}

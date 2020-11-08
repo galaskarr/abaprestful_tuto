@@ -1,0 +1,10 @@
+projection;
+use draft;
+
+define behavior for ZC_BOOKING_000 alias Booking
+use etag
+{
+  use create;
+  use update;
+  use delete;
+}

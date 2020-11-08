@@ -1,10 +1,16 @@
 unmanaged implementation in class z_i_booking_000 unique;
+with draft;
 
-define behavior for ZI_Booking_000 //alias <alias_name>
-lock master
-etag LastChangedAt
+define behavior for ZI_Booking_000 alias Booking
+draft table zdi_booking_000
+lock master total etag LastChangedAt
 {
   create;
   update;
   delete;
+
+  field ( mandatory ) booking;
+
+  validation execValidacao on save { field booking; create; }
+
 }
